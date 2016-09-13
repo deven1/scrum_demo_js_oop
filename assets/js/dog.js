@@ -17,7 +17,7 @@ APP.Dog = function Dog(options) {
 
   this.fetch = function() {
     console.log(this);
-    return  'Be right back with that kind sir';
+    return 'Be right back with that kind sir';
   };
 };
 
@@ -33,10 +33,10 @@ APP.Dog.create = function(options) {
 
 // Uncomment this to add functionality to the
 // Animal class's #speak method
-// 
-// APP.Dog.prototype.speak = function() {
-//   console.log('Added functionality!');
-//   return APP.Animal.prototype.speak.call(this);
-// };
+
+APP.Dog.prototype.speak = function() {
+  console.log('Added functionality!');
+  return APP.Animal.prototype.speak.call(this);
+};
 
 

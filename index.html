@@ -16,6 +16,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </head>
   <body>
+    <!-- Output -->
+    <pre id="output"></pre>
 
     <!-- My Scripts -->
     <script src="/assets/js/animal.js"></script>
@@ -32,25 +34,51 @@
         name: 'Fido'
       });
 
-      console.log(cat.speak());
-      console.log(dog.speak());
-      console.log(cat.name);
-      console.log(dog.name);
+      function log() {
+        for (var i = 0; i < arguments.length; i++) {
+          var arg = arguments[i];
+          var output = document.getElementById('output');
+          console.log(arg);
+          output.innerHTML += arg + "\n";
+        }
+      }
 
-      console.log(APP.Cat);
-      console.log(APP.Dog);
-      console.log(APP.Animal);
-      console.log(APP.Animal.PLANET);
+      log("1. Properties")
+      log(cat.name);
+      log(dog.name);
+      log("");
 
-      console.log(cat.__proto__);
-      console.log(dog.__proto__);
-      console.log(APP.Cat.prototype);
-      console.log(APP.Dog.prototype);
-      console.log(APP.Cat.prototype.constructor.name);
-      console.log(APP.Dog.prototype.constructor.name);
+      log("2. Prototype Methods")
+      log(cat.speak());
+      log(dog.speak());
+      log("");
 
-      console.log(cat.purr());
-      console.log(dog.fetch());
+      log("3. Class variable/constant");
+      log(APP.Animal.PLANET);
+      log("");
+
+      log("4. Constructors")
+      log(APP.Cat);
+      log(APP.Dog);
+      log(APP.Animal);
+      log("");
+
+      log("5. Prototypes")
+      log(cat.__proto__);
+      log(dog.__proto__);
+      log(APP.Cat.prototype);
+      log(APP.Dog.prototype);
+      log("");
+
+      log("6. Constructors");
+      log(APP.Cat.prototype.constructor.name);
+      log(APP.Dog.prototype.constructor.name);
+      log("");
+
+      log("7. Methods on `this`");
+      log(cat.purr());
+      log(dog.fetch());
+      log("");
     </script>
   </body>
 </html>
