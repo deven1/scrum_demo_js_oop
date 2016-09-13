@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS OOP</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <!-- My Scripts -->
+    <script src="/assets/js/animal.js"></script>
+    <script src="/assets/js/dog.js"></script>
+    <script src="/assets/js/cat.js"></script>
+
+    <!-- Run -->
+    <script>
+      var cat = APP.Cat.create({
+        name: 'Fluffy'
+      });
+
+      var dog = APP.Dog.create({
+        name: 'Fido'
+      });
+
+      console.log(cat.speak());
+      console.log(dog.speak());
+      console.log(cat.name);
+      console.log(dog.name);
+
+      console.log(APP.Cat);
+      console.log(APP.Dog);
+      console.log(APP.Animal);
+      console.log(APP.Animal.PLANET);
+
+      console.log(cat.__proto__);
+      console.log(dog.__proto__);
+      console.log(APP.Cat.prototype);
+      console.log(APP.Dog.prototype);
+      console.log(APP.Cat.prototype.constructor.name);
+      console.log(APP.Dog.prototype.constructor.name);
+
+      console.log(cat.purr());
+      console.log(dog.fetch());
+    </script>
+  </body>
+</html>
+
